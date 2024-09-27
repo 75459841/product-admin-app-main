@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { AlertController, AlertOptions, LoadingController, ModalController, ModalOptions, ToastController, ToastOptions } from '@ionic/angular';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -67,6 +69,7 @@ async presentAlert(opts?: AlertOptions) {
 
   // ============== Modal ==============
   async presentModal(opts: ModalOptions) {
+    console.log('Dentro del modal')
     const modal = await this.modalCtrl.create(opts);
     await modal.present();
 

@@ -15,6 +15,7 @@ import { AddUpdateProductComponent } from './components/add-update-product/add-u
     CustomInputComponent,
     LogoComponent,
     AddUpdateProductComponent
+
   ],
   exports: [
     HeaderComponent,

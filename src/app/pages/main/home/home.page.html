@@ -2,10 +2,18 @@
 
 <ion-content>
 
+            //==========nuevo producto =======================
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button  (klick)="addUpdateProduct()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </ion-content>
+
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-
 
   <ion-card mode="ios" color="secondary" class="d-flex-center ion-text-center" *ngIf="!loading && products.length">
     <div>
@@ -17,6 +25,7 @@
       <p>Ganancias</p>
     </div>
   </ion-card>
+
 
   <!-- ====== Productos ====== -->
   <ion-list *ngIf="!loading">
@@ -36,11 +45,13 @@
           </ion-chip>
         </ion-label>
       </ion-item>
+
+      
   
       <!-- ===== Opciones ===== -->
       <ion-item-options>
         <!-- Editar -->
-        <ion-item-option (click)="addUpdateProduct(p)">
+        <ion-item-option (click)="addUpdateProduct()">
           <ion-icon class="option-btn" name="create-outline"></ion-icon>
         </ion-item-option>
   
@@ -58,3 +69,5 @@
     </ion-item-sliding>
   </ion-list>
   
+
+ 

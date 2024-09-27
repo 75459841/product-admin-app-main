@@ -27,6 +27,8 @@ export class HomePage implements OnInit {
     const doc = new jsPDF();
     const pageWidth = doc.internal.pageSize.getWidth();
 
+
+  
     // Título
     const title = 'CHINO SA DE CV';
     doc.setFontSize(18);
@@ -119,7 +121,6 @@ export class HomePage implements OnInit {
         this.products = res;
 
         this.loading = false;
-
         sub.unsubscribe();
       }
     })
@@ -128,6 +129,7 @@ export class HomePage implements OnInit {
   // ====== Agregar o actualizar producto =====
   async addUpdateProduct(product?: Product) {
 
+    console.log("AddUpdateProduct")
     let success = await this.utilsSvc.presentModal({
       component: AddUpdateProductComponent,
       cssClass: 'add-update-modal',
@@ -136,7 +138,6 @@ export class HomePage implements OnInit {
 
     if (success) this.getProducts();
   }
-
 
   // ====== Confirmar eliminación del producto =====
   async confirmDeleteProduct(product: Product) {
