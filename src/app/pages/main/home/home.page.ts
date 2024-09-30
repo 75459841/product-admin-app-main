@@ -9,6 +9,7 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',

@@ -1,15 +1,7 @@
 <app-header [showMenu]="true" title="Inicio"></app-header>
-
+   
 <ion-content>
-
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button  (click)="addUpdateProduct()">
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-  </ion-content>
-
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+<ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
@@ -44,20 +36,18 @@
         </ion-label>
       </ion-item>
 
-      
-  
       <!-- ===== Opciones ===== -->
       <ion-item-options>
         <!-- Editar -->
-        <ion-item-option (click)="addUpdateProduct()">
+        <ion-item-option (click)="addUpdateProduct(p)">
           <ion-icon class="option-btn" name="create-outline"></ion-icon>
         </ion-item-option>
   
         <!-- Eliminar -->
         <ion-item-option (click)="confirmDeleteProduct(p)" color="danger">
           <ion-icon class="option-btn" name="trash-outline"></ion-icon>
-        </ion-item-option>
-  
+        </ion-item-option> 
+        
         <!-- Botón para generar PDF -->
         <ion-item-option (click)="generatePDF(p)">
           <ion-icon class="option-btn" name="document-outline"></ion-icon>
@@ -66,6 +56,16 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
+  
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button  (click)="addUpdateProduct()">
+            <ion-icon name="add"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+
+</ion-content>
+ 
+      
   
 
  
